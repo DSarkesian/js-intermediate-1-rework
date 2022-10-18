@@ -13,7 +13,36 @@ const resultArea = document.getElementById("calc-monthly-payment");
  *
  * */
 
+
+
 function getFormValues() {
+  if(loanAmountInput.value<0){
+    alert("Loan amount must be bigger than or equal to 0")
+    setInitialValues()
+    return{
+      amount: Number(loanAmountInput.value),
+      years: Number(termInYearsInput.value),
+      rate: Number(yearlyRateInput.value)
+    };
+  }
+  if(termInYearsInput.value<0){
+    alert("term in years must be bigger than or equal to 0")
+    setInitialValues()
+    return{
+      amount: Number(loanAmountInput.value),
+      years: Number(termInYearsInput.value),
+      rate: Number(yearlyRateInput.value)
+    };
+  }
+  if(yearlyRateInput.value<0){
+    alert("yearly rate must be bigger than or equal to 0")
+    setInitialValues()
+    return{
+      amount: Number(loanAmountInput.value),
+      years: Number(termInYearsInput.value),
+      rate: Number(yearlyRateInput.value)
+    };
+  }
   return {
     amount: Number(loanAmountInput.value),
     years: Number(termInYearsInput.value),
